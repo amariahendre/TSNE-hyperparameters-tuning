@@ -36,13 +36,24 @@ if uploaded_file is not None:
         st.write(text)
     st.write("---")
 
-    data = np.load(uploaded_file)
+    # Load data based on file format
+    if uploaded_file.name.endswith('.npy'):
+        data = np.load(uploaded_file)
+    elif uploaded_file.name.endswith('.csv'):
+        data = pd.read_csv(uploaded_file).values
+    elif uploaded_file.name.endswith('.txt'):
+        data = np.loadtxt(uploaded_file)
+        
     st.sidebar.write('Data shape:', data.shape)
     st.sidebar.write("---")
 
 
-    # Transform the data using log2(x+1)
-    transformed_data = np.log2(data + 1)
+    # Add checkbox for data transformation
+    apply_transformation = st.sidebar.checkbox('Apply log2(x+1) transformation to data', value=True)
+
+    # Conditionally transform the data using log2(x+1)
+    if apply_transformation:
+        data = np.log2(data + 1)
 
     # PCA
     st.sidebar.subheader('PCA Parameters')
