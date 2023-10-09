@@ -80,7 +80,7 @@ if uploaded_file is not None:
     if data_choice == 'PCA Data':
         input_data = pca_data
     else:
-        input_data = transformed_data
+        input_data = data
 
     tsne = TSNE(perplexity=perplexity, learning_rate=learning_rate, early_exaggeration=early_exaggeration,
                 init=init, n_iter=n_iter, random_state=42)
