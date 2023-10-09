@@ -9,7 +9,7 @@ The T-SNE Visualization Tool is a specialized utility designed to help you fine-
 - matplotlib
 
 ## Features:
-1. **Data Upload**: Users can upload their own `.npy` file containing their dataset through the Streamlit sidebar.
+1. **Data Upload**: Users can upload their own file containing their dataset through the Streamlit sidebar.
 2. **Data Transformation**: The tool applies a transformation to the data by taking the logarithm of each value plus one (\( \log_2(x+1) \)). This step helps normalize and preprocess the data for visualization.
 3. **PCA (Principal Component Analysis)**: Users can perform Principal Component Analysis on the transformed data by adjusting the number of PCA components.
 4. **T-SNE Hyperparameter Tuning**: Users can configure various t-SNE hyperparameters, such as perplexity, learning rate, early exaggeration, initialization method, and the number of iterations.
