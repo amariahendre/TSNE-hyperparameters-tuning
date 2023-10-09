@@ -59,12 +59,12 @@ if uploaded_file is not None:
     st.sidebar.subheader('PCA Parameters')
     n_components = st.sidebar.slider('Number of PCA components', 1, min(data.shape[0], data.shape[1]), 50)
     pca = PCA(n_components=n_components)
-    pca_data = pca.fit_transform(transformed_data)
+    pca_data = pca.fit_transform(data)
     # st.sidebar.write("---")
 
     # T-SNE parameters
     st.sidebar.subheader('T-SNE Parameters')
-    data_choice = st.sidebar.selectbox('Choose data for t-SNE', ['Transformed Data', 'PCA Data'])
+    data_choice = st.sidebar.selectbox('Choose data for t-SNE', ['Original or Transformed Data', 'PCA Data'])
     perplexity = st.sidebar.slider('Perplexity', 2, 100, 30)
     learning_rate = st.sidebar.slider('Learning Rate', 10, 1000, 200)
     early_exaggeration = st.sidebar.slider('Early Exaggeration', 1, 50, 12)
