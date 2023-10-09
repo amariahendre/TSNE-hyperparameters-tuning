@@ -68,7 +68,7 @@ if uploaded_file is not None:
     perplexity = st.sidebar.slider('Perplexity', 2, 100, 30)
     learning_rate = st.sidebar.slider('Learning Rate', 10, 1000, 200)
     early_exaggeration = st.sidebar.slider('Early Exaggeration', 1, 50, 12)
-    init = st.sidebar.selectbox('Initialization', ['random', 'pca'])
+    init = st.sidebar.selectbox('Initialization', ['pca', 'random'])
     n_iter = st.sidebar.slider('Number of Iterations', 250, 5000, 1000)
 
     st.sidebar.write("---")
