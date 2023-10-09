@@ -6,11 +6,8 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title='T-SNE Vizualization')
 
-
 st.title('T-SNE Visualization Tool')
 st.write('The T-SNE Visualization Tool is a specialized utility designed to help you fine-tune the hyperparameters of the t-distributed Stochastic Neighbor Embedding (t-SNE) algorithm for optimal visualization of high-dimensional data in a two-dimensional space.')
-
-uploaded_file = st.sidebar.file_uploader("Upload a .npy file", type="npy")
 
 text = ("""
 Data upload: In the sidebar, you can upload your own .npy file containing your dataset. 
@@ -30,6 +27,7 @@ Visualization with hyperparameters: The T-SNE Visualization Tool generates a sca
 The title of the plot includes the selected t-SNE hyperparameters for reference.
 """ )
 
+uploaded_file = st.sidebar.file_uploader("Upload a .npy file", type="npy")
 # If a new file is uploaded, overwrite the default data
 if uploaded_file is not None:
     with st.expander("How to use this tool"):
